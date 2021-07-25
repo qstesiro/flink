@@ -1,0 +1,21 @@
+alias.define "breakpoint.method", "break.method";
+alias.define "breakpoint.line", "break.line";
+alias.define "breakpoint.delete", "break.delete";
+alias.define "breakpoint.enable", "break.enable";
+alias.define "breakpoint.disable", "break.disable";
+alias.define "breakpoint.query", "break.query";
+
+alias.define "execute.next.over", "exec.next.over";
+alias.define "execute.next.into", "exec.next.into";
+alias.define "execute.step.over", "exec.step.over";
+alias.define "execute.step.into", "exec.step.into";
+alias.define "execute.upon", "exec.upon";
+alias.define "execute.run", "exec.run";
+
+source.append "/home/qstesiro/github.com/qstesiro/flink/flink-examples/flink-examples-streaming/src/main/java";
+config.set "line", 8;
+
+import.class "org.apache.flink.streaming.examples.wordcount.WordCount";
+break.method "WordCount.main(String[])";
+
+exec.run;
